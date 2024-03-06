@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-3-%$9!%+je=*585!($c7e@$9-il0)cixxt)7-k6!3yzs8!(w)&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['yottabufer.pythonanywhere.com', ]
+ALLOWED_HOSTS = ['yottabufer.pythonanywhere.com', 'localhost']
 
 # Application definition
 

@@ -1,4 +1,4 @@
-# Тестовое задание
+# Тестовое задание для N**a
 
 <details>
   <summary>Подробности задания</summary>
@@ -40,7 +40,7 @@
 С уважением, Анна, N***.
 </details>
 
-### Как протестировать:
+### Как протестировать API на сервере:
 1. Сделать POST-запрос по адресу
 ```python
 https://yottabufer.pythonanywhere.com/api/upload/
@@ -55,7 +55,25 @@ name: test_str
 data: test_str
 ```
 
-3. Перейти ГуглДиск и проверить папку:
+3. [Перейти ГуглДиск и проверить папку](https://drive.google.com/drive/folders/1KHnntufZ0aWA1m05v42dkDwJw8Fd6DhW?hl=ru)
+
+
+### Как протестировать API локально:
+1. Собрать тестовое задание в докере
 ```python
-https://drive.google.com/drive/folders/1KHnntufZ0aWA1m05v42dkDwJw8Fd6DhW?hl=ru
+docker-compose -f docker-compose.yml up -d --force-recreate
 ```
+2. Сделать POST-запрос по адресу
+```python
+localhost:8000/api/upload/
+```
+3. Тело запроса так же должно включать:
+```python
+name: test_str
+```
+
+```python
+data: test_str
+```
+
+4. [Перейти ГуглДиск и проверить папку](https://drive.google.com/drive/folders/1KHnntufZ0aWA1m05v42dkDwJw8Fd6DhW?hl=ru)
