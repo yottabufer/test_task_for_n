@@ -61,7 +61,7 @@ data: test_str
 ### Как протестировать API локально:
 1. Собрать тестовое задание в докере
 ```python
-docker-compose -f docker-compose.yml up -d --force-recreate
+docker-compose up -d --force-recreate --build
 ```
 2. Сделать POST-запрос по адресу
 ```python

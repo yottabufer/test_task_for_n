@@ -7,7 +7,6 @@ from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST
-
 SCOPES = [
     'https://www.googleapis.com/auth/drive',
     'https://www.googleapis.com/auth/drive.file',
@@ -16,12 +15,11 @@ SIZE_FILE = 1048576  # 1 МБ, квота на бесплатном сервер
 
 
 def validate(data, name):
-    if (data or name) is None:
+    if data is None or name is None:
         return Response({'Ошибка': 'Поля name и data обязательны'}, status=HTTP_400_BAD_REQUEST)
-
-    if (len(data) or len(name)) > SIZE_FILE:
+    if len(data) > SIZE_FILE or len(name) > SIZE_FILE:
         return Response({'Ошибка': 'Превышен размер в 1МБ'}, status=HTTP_400_BAD_REQUEST)
-    return True
+    return None
 
 
 def drive_init(credentials_path: str, token_path: str) -> build:

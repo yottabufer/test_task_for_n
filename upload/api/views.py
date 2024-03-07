@@ -23,7 +23,9 @@ class CreateFileOnGoogleDriveView(APIView):
         file_name = self.request.data.get('name')
         file_data = self.request.data.get('data')
         # Чуть-чуть валидации на заполнение данных
-        validate(file_data, file_name)
+        validate_data = validate(file_data, file_name)
+        if validate_data:
+            return validate_data
         try:
             create_file(drive, file_name, file_data)
             return Response({'Прекрасно': 'Файл создан успешно'})
